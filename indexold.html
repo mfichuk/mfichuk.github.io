@@ -1,0 +1,156 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="js/parsley.js"></script>
+      <![endif]-->
+      <style>
+         .jumbotron
+         {
+         background-color:#00e6b8;
+         color:white;
+         }
+         .tab-content
+         {
+         border-left: 1px solid #ddd;
+         border-right: 1px solid #ddd;
+         border-bottom: 1px solid #ddd;
+         padding: 10px;
+         }
+         .nav-tabs
+         {
+         margin-bottom: 0;
+         }
+        
+      </style>
+   </head>
+   <center>
+    <!--<body style="background-image:url(http://paper-backgrounds.com/textureimages/2012/06/concrete-texture-background-hd.jpg)">-->
+     <body>
+      <div class="container">
+         <div class="page-header">
+            <h1 style="font-size: 80px; color:white;">UP TO CODE <IMG SRC="concrete-mixer.png" ALT="some text" WIDTH=100 HEIGHT=100 ></h1>
+         </div>
+         <div class="jumbotron">
+            <p>Use this application in a concrete mixing lab, on a construction site, or in a testing lab to check if concrete mix and testing data meets OPSS and CSA specifications.</p>
+         </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <!--<form name="myForm" onsubmit="return validateForm()" method="post">-->
+      <a href="#onsite" onclick="show_div('onsite');"/><br><button type="button" class="btn btn-default">
+      <IMG SRC="helmet.png" ALT="some text" WIDTH=200 HEIGHT=200/>
+      <br>On Site</button>
+      <div id="onsite" style="display: none;">
+        <br>
+        <div class="row">
+    <div class="col-sm-4">
+        <a href="#slumptest" onclick="show_div('slumptest');"/><br>
+       <button type="button" class="btn btn-default">Slump Test</button>
+       <br>
+        <IMG SRC="wheelbarrow.png" ALT="some text" WIDTH=200 HEIGHT=200/>
+        <br>
+         <br>
+         <div id="slumptest" style="display: none;">
+            <br>
+            <input type="number" name="slump_test" keypress="slumpTest(event)"/>
+            
+         </div>
+    </div>
+    <div class="col-sm-4">
+    <a href="#airContent" onclick="show_div('airContent');"/><br>
+         <button type="button" class="btn btn-default">Air Content</button>
+         <br>
+         <IMG SRC="oxygen.png" ALT="some text" WIDTH=200 HEIGHT=200>
+         <br>
+         <div id="airContent" style="display: none;"> 
+            <br>
+            <input type="text" name="air_content" maxlength="50" size="30">
+            <br>
+         </div>
+    </div>
+    <div class="col-sm-4">
+    <a href="#temperature" onclick="show_div('temperature');"/><br>
+         <button type="button" class="btn btn-default">Temperature</button>
+         <br>
+         <IMG SRC="thermometer.png" ALT="some text" WIDTH=200 HEIGHT=200>
+         <br>
+         <div id="temperature" style="display: none;"> 
+            <br>
+            <input type="text" name="temperature" maxlength="50" size="30"/>
+            <br>
+         </div>
+    </div>
+  </div>
+        <br>
+      </div>
+
+      <a href="#inplant" onclick="show_div('inplant');"/><br><button type="button" class="btn btn-default">
+      <IMG SRC="concrete-mixer1.png" ALT="some text" WIDTH=200 HEIGHT=200>
+      <br>In Plant</button>
+      <div id="inplant" style="display: none;">
+         <a href="#compressivestrength" onclick="show_div('compressivestrength');"/><br>
+         <button type="button" class="btn btn-default">Compressive Strength</button>
+         <br>
+         <div id="compressivestrength" style="display: none;"> 
+            <br>
+            <input type="text" name="compressive_strength" maxlength="50"size="30">
+            <br>
+         </div>
+         <a href="#cipt" onclick="show_div('cipt');"/><br>
+         <button type="button" class="btn btn-default">Chloride Ion Penetrability Test</button>
+         <br>
+         <div id="cipt" style="display: none;"> 
+            <br>
+            <input type="text" name="chloride_ion_penetrability_test" maxlength="50"size="30">
+            <br>
+         </div>
+         <a href="#lst" onclick="show_div('lst');"/><br>
+         <button type="button" class="btn btn-default">Linear Shrinkage Test</button>
+         <br>
+         <div id="lst" style="display: none;"> 
+            <br>
+            <input type="text" name="linear_shrinkage_test" maxlength="50"size="30"/>
+            <br>
+         </div>
+      </div>
+      <a href="#inlab" onclick="show_div('inlab');"/><br><button type="button" class="btn btn-default">
+      <IMG SRC="door.png" ALT="some text" WIDTH=200 HEIGHT=200>
+      <br>In Lab</button>
+      <div id="inlab" style="display: none;">
+      <a href="#yield" onclick="show_div('yield');"/><br>
+      <button type="button" class="btn btn-default">Yield</button>
+      <br>
+      <div id="yield" style="display: none;">
+         <br>
+         <input type="text" name="yield" maxlength="50"size="30"/>
+         <br>
+      </div>
+      <br>
+      </div>
+      <!--</form>-->
+    <script>
+        function show_div(toShow)
+               {
+                   var show = document.getElementById(toShow);
+                   show.style.display = "";
+               }
+               function slumpTest(event) {
+    if(event.keyCode === 13){
+alert("You pressed a key inside the input field");
+ event.preventDefault();
+}
+}
+</script>
+</body>
+</html>

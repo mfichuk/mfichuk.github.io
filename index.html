@@ -1,0 +1,235 @@
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <!-- Bootstrap -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="js/bootstrap.min.js"></script>
+      <!--<form name="myForm" onsubmit="return validateForm()" method="post">-->
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="js/parsley.js"></script>
+      <![endif]-->
+<style>
+   .jumbotron
+         {
+         background-color:#00e6b8;
+         color:white;
+         }
+</style>
+   </head>
+   <body class="text-center" style="background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(http://paper-backgrounds.com/textureimages/2012/06/concrete-texture-background-hd.jpg)">
+       <form>
+         
+         <div class="container">
+         <div class="page-header">
+            <h1 style="font-size: 80px; color:white;">UP TO CODE <IMG SRC="concrete-mixer.png" ALT="some text" WIDTH=100 HEIGHT=100 ></h1>
+         </div>
+         
+        <div style="display: -webkit-inline-box;">
+            <div style="padding: 0 20 0 20;">               
+                <IMG SRC="concrete.png" ALT="some text" WIDTH=65 HEIGHT=65/>
+                <span style="display: inherit; color:white;">Production Plant</span>
+            </div>
+            <div style="padding: 0 20 0 20;">
+               <IMG SRC="helmet.png" ALT="some text" WIDTH=65 HEIGHT=65/>
+               <span style="display: inherit; color:white;">On Site</span>
+            </div>
+            <div style="padding: 0 20 0 20;">
+               <IMG SRC="door.png" ALT="some text" WIDTH=65 HEIGHT=65/>
+               <span style="display: inherit; color:white;">Testing Lab</span>
+            </div>
+         </div>
+         <div class="jumbotron" style="margin-top: 20px;">
+            <p>Concrete Test Result Verifier</p>
+            <p>Use this application to compare concrete mixing and testing results with OPSS, ATSM, and CSA specifications.</p>
+         </div>
+      </div>
+            
+           <IMG SRC="wheelbarrow.png" ALT="some text" WIDTH=200 HEIGHT=200/>
+           <h1 style="color:white;">Slump Test</h1>
+           <input type="number" id="slumpID" name="slump_test" placeholder="mm"></input>
+           <div id="slump_results" style="color: white; font-size: 20px;"></div>
+           <br>
+           
+           <br>
+           <IMG SRC="oxygen.png" ALT="some text" WIDTH=200 HEIGHT=200>
+           <h1 style="color:white;">Air Content</h1>
+           <input type="number" id="airID" name="air_test" placeholder="%"></input>
+           <div id="air_results" style="color: white; font-size: 20px;"></div>
+           <br>
+           
+           <br>
+           <IMG SRC="thermometer.png" ALT="some text" WIDTH=200 HEIGHT=200>
+           <h1 style="color:white;">Temperature</h1>
+           <input type="number" id="tempID" name="temp_test" placeholder="°C"></input>
+           <div id="temp_results" style="color: white; font-size: 20px;"></div>
+           <br>
+            
+           <br>
+           <IMG SRC="compress.png" ALT="some text" WIDTH=200 HEIGHT=200>
+            <h1 style="color:white;">Compressive Strength</h1>
+           <input type="number" id="compID" name="comp_test" placeholder="MPa"></input>
+           <div id="comp_results" style="color: white; font-size: 20px;"></div>
+           <br>
+           
+           <br>
+           <IMG SRC="flask.png" ALT="some text" WIDTH=200 HEIGHT=200>
+            <h1 style="color:white;">Chloride Ion Penetrability Test</h1>
+           <input type="number" id="ciptID" name="cipt_test" placeholder= "Coloumbs"></input>
+           <div id="cipt_results" style="color: white; font-size: 20px;""></div>
+           <br>
+           
+           <br>
+           <IMG SRC="ruler.png" ALT="some text" WIDTH=200 HEIGHT=200>
+            <h1 style="color:white;">Linear Shrinkage Test</h1>
+           <input type="number" id="lstID" name="lst_test" placeholder = "%"></input>
+           <div id="lst_results" style="color: white; font-size: 20px;"></div>
+           <br>
+           
+           <br>
+           <IMG SRC="trapezoidal-weight.png" ALT="some text" WIDTH=200 HEIGHT=200>
+            <h1 style="color:white;">Yield</h1>
+           <input type="number" id="yieldID" name="yield_test" placeholder = "Mass - kg"></input>
+           <div id="yield_results" style="color: white; font-size: 20px;"></div>
+           <br>
+           
+           <br>
+           <IMG SRC="tool.png" ALT="some text" WIDTH=200 HEIGHT=200>
+            <h1 style="color:white;">Hardened Air Void System</h1>
+           <input type="number" id="avsID" name="avs_test" placeholder = "Air Content - %"></input>
+           <div id="avs_results" style="color: white; font-size: 20px;"></div>
+       
+        </form>
+   </body>
+
+   <script>
+        $("#slumpID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var slumpValue = document.getElementById("slumpID").value;
+            if (slumpValue >= 170 && slumpValue <=230){
+                $("#slump_results").html("The slump results are up to code!<br>as per OPSS 1350");
+            }
+            else if (slumpValue < 170){
+                $("#slump_results").html("The slump results are "+ (170 - slumpValue) + " mm below code<br>as per OPSS 1350");
+            }
+            else{
+                $("#slump_results").html("The slump results are "+ (slumpValue - 230) + " mm above code<br>as per OPSS 1350");
+            }
+        });
+
+         $("#airID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var airValue = document.getElementById("airID").value;
+            if (airValue >= 4.5 && airValue <=6.5){
+                $("#air_results").html("The air content is up to code!<br>as per OPSS 1350");
+            }
+            else if (airValue < 4.5 && airValue > 0){
+                $("#air_results").html("The air content is "+ (4.5 - airValue) + "% below code<br>as per OPSS 1350");
+            }
+            else if (airValue > 6.5 && airValue < 100){
+                $("#air_results").html("The air content is "+ (airValue - 6.5) + "% above code<br>as per OPSS 1350");
+            }
+            else{
+               $("#air_results").html("Invalid input");
+            }
+         });
+            
+            $("#tempID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var tempValue = document.getElementById("tempID").value;
+            if (tempValue >= 10 && tempValue <=28){
+                $("#temp_results").html("The concrete temperature is up to code!<br>as per OPSS 1350");
+            }
+            else if (tempValue < 10){
+                $("#temp_results").html("The concrete temperature is "+ (10 - tempValue) + "°C below code<br>as per OPSS 1350");
+            }
+            else{
+                $("#temp_results").html("The concrete temperature is "+ (tempValue - 28) + "°C above code<br>as per OPSS 1350");
+            }
+        });
+            
+           $("#compID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var compValue = document.getElementById("compID").value;
+            if (compValue >= 30){
+                $("#comp_results").html("The compressive strength results are up to code!<br>as per OPSS 931");
+            }
+            else {
+                $("#comp_results").html("The compressive strength results are "+ (170 - compValue) + " MPa below code<br>as per OPSS 931");
+            }
+        });
+           
+          $("#ciptID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var ciptValue = document.getElementById("ciptID").value;
+            if (ciptValue > 4000){
+                $("#cipt_results").html("The sample has a high chloride permeability.<br>as per ASTM C1202 - 12");
+            }
+            else if (ciptValue >= 2000 && ciptValue <= 4000){
+                $("#cipt_results").html("The sample has a moderate permeability<br>as per ASTM C1202 - 12");
+            }
+            else if (ciptValue >= 1000 && ciptValue <= 2000){
+                $("#cipt_results").html("The sample has a low permeability above code<br>as per ASTM C1202 - 12");
+            }
+            else if (ciptValue >= 100 && ciptValue <= 4000){
+                $("#cipt_results").html("The sample has a very low permeability<br>as per ASTM C1202 - 12");
+            }
+            else if (ciptValue <100){
+                $("#cipt_results").html("The sample has a negligible permeability<br>as per ASTM C1202 - 12");
+            }
+            
+        });
+           $("#lstID").keyup(function() {
+            var lstValue = document.getElementById("lstID").value;
+            if (lstValue <= 0.04 && lstValue > 0){
+                $("#lst_results").html("The Linear Shrinkage results are up to code!<br>as per OPSS 930");
+            }
+            else if (lstValue < 100 && lstValue > 0.04){
+                $("#lst_results").html("The Linear Shrinkage Test results are "+ (lstValue - 0.04) + "% above code<br>as per OPSS 930");
+            }
+            else{
+               $("#lst_results").html("Invalid input");
+            }
+        });
+           
+           $("#yieldID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var yieldValue = document.getElementById("yieldID").value;
+                $("#yield_results").html("The yield is "+ (Math.round((yieldValue/24)* 100) / 100) +" m^3 of concrete");
+        });
+           
+              $("#avsID").keyup(function() {
+        //alert( "Handler for .keyup() called." );
+            //$("#slump_results").html("Hello World");
+            var avsValue = document.getElementById("avsID").value;
+            if (avsValue >= 3 && avsValue < 100){
+                $("#avs_results").html("The Air Void System results are up to code!<br>as per OPSS 1821");
+            }
+            else if (avsValue >= 0 && avsValue < 3)
+            {
+                $("#avs_results").html("The Air Void System Test results are "+ (3 - avsValue) + "% below code<br>as per OPSS 1821");
+            }
+            else
+            {
+               $("#avs_results").html("Invalid input");
+            }
+        });
+    </script>
+
+    </html>
+    
+    

@@ -17,7 +17,7 @@
       Dexter and Maisie Fichuk
   </author>
   <!-- Define app icon for each platform. -->
-    <icon src="icon.png" />
+    <icon src="helmet.png" />
     <icon src="helmet.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="helmet.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="helmet.png"   gap:platform="android"    gap:qualifier="hdpi" />

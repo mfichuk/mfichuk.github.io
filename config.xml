@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://mfichuk.github.io"
+    id          = "com.fichuk.uptocode"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Up To Code</name>
+
+  <description>
+      An example for phonegap build docs.
+  </description>
+
+  <author href="https://github.com/dexterfichuk" email="dexterfichuk@gmail.com">
+      Dexter and Maisie Fichuk
+  </author>
+  <!-- Define app icon for each platform. -->
+    <icon src="icon.png" />
+    <icon src="helmet.png"   gap:platform="android"    gap:qualifier="ldpi" />
+    <icon src="helmet.png"   gap:platform="android"    gap:qualifier="mdpi" />
+    <icon src="helmet.png"   gap:platform="android"    gap:qualifier="hdpi" />
+
+</widget>
